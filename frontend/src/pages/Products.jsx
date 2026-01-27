@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProduct = async () => {
      
-        const res = await axios.get(`http://localhost:5000/api/auth/product/${id}`, { withCredentials: true });
+        const res = await axios.get(`http://localhost:5000/api/product/${id}`, { withCredentials: true });
         setProduct(res.data);
         const defaultCat = res.data.categories?.find(c => c.isDefault) || res.data.categories?.[0];
         setSelectedCategory(defaultCat);

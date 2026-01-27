@@ -13,3 +13,13 @@ try {
     
 }
 }
+
+export const createProduct = (product) => async (dispatch) => {
+    try {
+        await axios.post(BACKEND_URI)
+      dispatch(asyncLoadProduct());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
